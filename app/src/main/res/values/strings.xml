@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="user_name">ASTON</string>
+    <string name="user_mail">alternance@aston-ecole.com</string>
+    <string name="logo_desc">Logo entreprise</string>
 </resources>
