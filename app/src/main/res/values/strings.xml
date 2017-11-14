@@ -4,8 +4,26 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- Menu -->
     <string name="action_settings">Settings</string>
     <string name="user_name">ASTON</string>
     <string name="user_mail">alternance@aston-ecole.com</string>
     <string name="logo_desc">Logo entreprise</string>
+
+    <!--Carrée magique-->
+    <string name="envoyer">Soumettre</string>
+    <string name="next">Continuer ?</string>
+    <string name="nouveau">New Game</string>
+    <string name="exit">Exit</string>
+    <string name="vide">"?"</string>
+    <string name="plus">+</string>
+    <string name="egal">=</string>
+    <string name="test">test</string>
+    <string name="result">Vous devez remplir toutes les cases pour obtenir un résultat.</string>
+    <string name="defaut">Vous devez finir le carré pour obtenir un résultat.</string>
+    <string name="continuer">Vous devez finir le carré pour obtenir un résultat.</string>
+    <string name="start">Nouvelle partie..</string>
+
+    <string name="winM">Bravo ! Vous avez fini en : %1$d minutes et %2$d secondes</string>
+    <string name="winS">Bravo ! Vous avez fini en : %1$d secondes</string>
 </resources>
