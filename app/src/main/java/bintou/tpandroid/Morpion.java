@@ -1,11 +1,13 @@
 package bintou.tpandroid;
 
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.Random;
 
@@ -13,9 +15,10 @@ public class Morpion extends AppCompatActivity {
 
     int c[][];
     int i, j, k = 0;
-    Button b[][];
+    ImageButton b[][];
     AI ai;
     TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +30,23 @@ public class Morpion extends AppCompatActivity {
 
     private void setBoard() {
         ai = new AI();
-        b = new Button[4][4];
+        b = new ImageButton[4][4];
         c = new int[4][4];
         textView = (TextView) findViewById(R.id.txtMorpion);
 
-        b[1][3] = (Button) findViewById(R.id.one);
-        b[1][2] = (Button) findViewById(R.id.two);
-        b[1][1] = (Button) findViewById(R.id.three);
+        b[1][3] = (ImageButton) findViewById(R.id.one);
+        b[1][2] = (ImageButton) findViewById(R.id.two);
+        b[1][1] = (ImageButton) findViewById(R.id.three);
 
 
-        b[2][3] = (Button) findViewById(R.id.four);
-        b[2][2] = (Button) findViewById(R.id.five);
-        b[2][1] = (Button) findViewById(R.id.six);
+        b[2][3] = (ImageButton) findViewById(R.id.four);
+        b[2][2] = (ImageButton) findViewById(R.id.five);
+        b[2][1] = (ImageButton) findViewById(R.id.six);
 
 
-        b[3][3] = (Button) findViewById(R.id.seven);
-        b[3][2] = (Button) findViewById(R.id.eight);
-        b[3][1] = (Button) findViewById(R.id.nine);
+        b[3][3] = (ImageButton) findViewById(R.id.seven);
+        b[3][2] = (ImageButton) findViewById(R.id.eight);
+        b[3][1] = (ImageButton) findViewById(R.id.nine);
         for (i = 1; i <= 3; i++) {
             for (j = 1; j <= 3; j++)
                 c[i][j] = 2;
@@ -54,7 +57,7 @@ public class Morpion extends AppCompatActivity {
             for (j = 1; j <= 3; j++) {
                 b[i][j].setOnClickListener(new MyClickListener(i, j));
                 if (!b[i][j].isEnabled()) {
-                    b[i][j].setText(" ");
+                    b[i][j].setImageDrawable(getResources().getDrawable(R.drawable.box));
                     b[i][j].setEnabled(true);
                 }
             }
@@ -73,7 +76,7 @@ public class Morpion extends AppCompatActivity {
         public void onClick(View view) {
             if (b[x][y].isEnabled()) {
                 b[x][y].setEnabled(false);
-                b[x][y].setText("O");
+                b[x][y].setImageDrawable(getResources().getDrawable(R.drawable.cross));
                 c[x][y] = 0;
                 if (!checkBoard()) {
                     ai.takeTurn();
@@ -141,7 +144,7 @@ public class Morpion extends AppCompatActivity {
 
         private void markSquare(int x, int y) {
             b[x][y].setEnabled(false);
-            b[x][y].setText("X");
+            b[x][y].setImageDrawable(getResources().getDrawable(R.drawable.circle));
             c[x][y] = 1;
             checkBoard();
         }
@@ -190,8 +193,6 @@ public class Morpion extends AppCompatActivity {
         return gameOver;
 
     }
-
-
   public void restart(View v){
     setBoard();
     }

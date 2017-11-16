@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,100 +17,94 @@
             android:layout_height="match_parent"
             tools:ignore="MissingConstraints">
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/one"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="5px"
-                android:text=" "
-                android:textSize="70px" />
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/two"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignTop="@id/one"
-                android:layout_marginLeft="5px"
+                android:layout_marginLeft="5dp"
                 android:layout_toLeftOf="@id/one"
-                android:text=" "
-                android:textSize="70px" />
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/three"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignTop="@id/two"
-                android:layout_marginLeft="5px"
+                android:layout_marginLeft="5dp"
                 android:layout_toLeftOf="@id/two"
-                android:padding="0px"
-                android:text=" "
-                android:textSize="70px" />
+                android:padding="0dp"
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/four"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/one"
-                android:layout_marginLeft="5px"
-                android:text=" "
-                android:textSize="70px" />
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/five"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignTop="@id/four"
-                android:layout_marginLeft="5px"
+                android:layout_marginLeft="5dp"
                 android:layout_toLeftOf="@id/four"
-                android:text=" "
-                android:textSize="70px" />
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/six"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignTop="@id/five"
-                android:layout_marginLeft="5px"
+                android:layout_marginLeft="5dp"
                 android:layout_toLeftOf="@id/five"
-                android:text=" "
-                android:textSize="70px" />
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/seven"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/four"
-                android:layout_marginLeft="5px"
-                android:text=" "
-                android:textSize="70px" />
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/eight"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignTop="@id/seven"
-                android:layout_marginLeft="5px"
+                android:layout_marginLeft="5dp"
                 android:layout_toLeftOf="@id/seven"
-                android:text=" "
-                android:textSize="70px" />
+                android:src="@drawable/box"
+                android:textSize="70dp" />
 
-            <Button
+            <android.support.design.widget.CheckableImageButton
                 android:id="@+id/nine"
-                android:layout_width="100px"
-                android:layout_height="100px"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignTop="@id/eight"
-                android:layout_marginLeft="5px"
-                android:layout_toLeftOf="@id/eight"
-                android:text=" "
-                android:textSize="70px" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_marginStart="5dp"
+                android:layout_toStartOf="@id/eight"
+                android:src="@drawable/box" />
 
         </RelativeLayout>
     </LinearLayout>
@@ -117,23 +112,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="2"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnRestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="restart"
+            android:text="Nouvelle Partie"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMorpion" />
 
         <TextView
             android:id="@+id/txtMorpion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:text="" />
-
-        <Button
-            android:id="@+id/btnRestore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="restart"
-            android:text="Nouvelle Partie" />
+            android:layout_marginTop="478dp"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/btnRestore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
 </LinearLayout>
