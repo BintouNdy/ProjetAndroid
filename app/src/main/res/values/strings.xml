@@ -30,4 +30,8 @@
     <string name="winM">Bravo ! Vous avez fini en : %1$d minutes et %2$d secondes</string>
     <string name="winS">Bravo ! Vous avez fini en : %1$d secondes</string>
     <string name="title_activity_memory">Memory</string>
+    <string name="title_activity_morpion">Morpion</string>
+    <string name="img_carre">Image pour lancé le Carré magique</string>
+    <string name="img_morpion">Image pour lancé le Morpion</string>
+    <string name="img_memory">Image pour lancé le Memory</string>
 </resources>

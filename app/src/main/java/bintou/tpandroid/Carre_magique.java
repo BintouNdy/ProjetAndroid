@@ -3,6 +3,8 @@ package bintou.tpandroid;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -46,6 +48,15 @@ public class Carre_magique extends SubActivity {
 
         /* méthode create dans SubActivity */
         setView(R.layout.activity_carre_magique);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Entrez des chiffres entre 1 et 9, \nAttention la grille ne peut pas contenir de doublon", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         // On active le chronomètre
         simpleChronometer = findViewById(R.id.chrono); // initiate a chronometer

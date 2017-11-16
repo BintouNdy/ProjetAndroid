@@ -4,7 +4,9 @@ package bintou.tpandroid;
  * Created by Steven YON on 14/11/2017.
  */
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,7 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+@SuppressLint("Registered")
 public class SubActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -59,12 +63,9 @@ public class SubActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(this, MainActivity.class);
         switch (item.getItemId()) {
-            case R.id.home:
-                startActivity(intent);
-                return true;
             case R.id.action_settings:
+                Toast.makeText(SubActivity.this, "Paramètre", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -93,16 +94,36 @@ public class SubActivity extends AppCompatActivity
         } else if (id == R.id.carre) {
             intent = new Intent(this, Carre_magique.class);
             startActivity(intent);
-//        } else if (id == R.id.morpion) {
-//            intent = new Intent(this, Morpion.class);
-//            startActivity(intent);
+        } else if (id == R.id.morpion) {
+            intent = new Intent(this, Morpion.class);
+            startActivity(intent);
         } else if (id == R.id.memory) {
             intent = new Intent(this, Memory.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
-
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Partage cette App");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Pour pouvoir voir et modifier cette superbe app, regarde le Git suivant : \"https://github.com/BintouNdy/ProjetAndroid\"");
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
         } else if (id == R.id.nav_send) {
+            String[] TO = {""};
+            String[] CC = {""};
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
+            emailIntent.setData(Uri.parse("mailto:"));
+            emailIntent.setType("text/plain");
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+            emailIntent.putExtra(Intent.EXTRA_CC, CC);
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                finish();
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(SubActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+            }
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

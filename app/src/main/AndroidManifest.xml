@@ -22,10 +22,14 @@
         <activity
             android:name=".Carre_magique"
             android:label="@string/activity_carre"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Memory"
             android:label="@string/title_activity_memory"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Morpion"
+            android:label="@string/title_activity_morpion"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

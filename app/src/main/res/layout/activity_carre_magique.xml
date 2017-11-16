@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_spe" />
+
     <Chronometer
         android:id="@+id/chrono"
         android:layout_width="match_parent"

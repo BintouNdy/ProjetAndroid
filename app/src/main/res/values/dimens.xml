@@ -8,4 +8,7 @@
 
     <!--Carrée magique-->
     <dimen name="default_gap">8dip</dimen>
+
+    <!--Carrée magique-->
+    <dimen name="menu_spe">64dip</dimen>
 </resources>
