@@ -19,7 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Carre_magique"></activity>
+        <activity
+            android:name=".Carre_magique"
+            android:label="@string/activity_carre"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Memory"
+            android:label="@string/title_activity_memory"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

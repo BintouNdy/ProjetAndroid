@@ -8,6 +8,9 @@
     <string name="action_settings">Settings</string>
     <string name="user_name">ASTON</string>
     <string name="user_mail">alternance@aston-ecole.com</string>
+    <string name="activity_carre">Carré magique</string>
+
+    <!-- Manifest -->
     <string name="logo_desc">Logo entreprise</string>
 
     <!--Carrée magique-->
@@ -26,4 +29,5 @@
 
     <string name="winM">Bravo ! Vous avez fini en : %1$d minutes et %2$d secondes</string>
     <string name="winS">Bravo ! Vous avez fini en : %1$d secondes</string>
+    <string name="title_activity_memory">Memory</string>
 </resources>

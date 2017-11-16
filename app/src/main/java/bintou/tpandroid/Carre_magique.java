@@ -1,10 +1,8 @@
 package bintou.tpandroid;
 
-import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -42,14 +40,15 @@ public class Carre_magique extends SubActivity {
     TextView resC3 = null;
     TextView result = null;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        /* méthode create dans SubActivity */
+        setView(R.layout.activity_carre_magique);
 
         // On active le chronomètre
-        simpleChronometer = findViewById(R.id.chronometer); // initiate a chronometer
+        simpleChronometer = findViewById(R.id.chrono); // initiate a chronometer
         simpleChronometer.start(); // start a chronometer
 
         // On récupère toutes les vues dont on a besoin
@@ -163,7 +162,7 @@ public class Carre_magique extends SubActivity {
             int rC3 = Integer.parseInt(resC3.getText().toString());
 
             // Vérification : chiffre & unicité des réponses
-            if ((v1 > 10) || (v2 > 10) || (v3 > 10) || (v4 > 10) || (v5 > 10) || (v6 > 10) || (v7 > 10) || (v8 > 10) || (v9 > 10)) {
+            if ((v1 > 9) || (v2 > 9) || (v3 > 9) || (v4 > 9) || (v5 > 9) || (v6 > 9) || (v7 > 9) || (v8 > 9) || (v9 > 9)) {
                 Toast.makeText(Carre_magique.this, "Attention, les valeurs accépté sont comprise entre [0-9]", Toast.LENGTH_SHORT).show();
             } else {
                 if (v1 + v2 + v3 != rL1)
@@ -242,3 +241,11 @@ public class Carre_magique extends SubActivity {
         }
     };
 }
+
+/*
+  Solution :
+
+   1   8   3
+   4   7   2
+   6   5   9
+ */
